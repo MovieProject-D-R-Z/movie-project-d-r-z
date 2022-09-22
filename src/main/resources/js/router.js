@@ -13,7 +13,14 @@ export default function router(URI) {
     const routes = {
         '/': {
             returnView: Home,
-            state: {},
+            state: {
+                TmbdMovies: {
+                    url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }
+            },
             uri: '/',
             title: 'Home',
             viewEvent: HomeEvents
@@ -60,11 +67,4 @@ export default function router(URI) {
 
     return routes[URI];
 }
-
-// TmbdMovies: {
-//     url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
-//         headers: {
-//         'Accept': 'application/json'
-//     }
-// }
 

@@ -16,7 +16,7 @@ export default function Home(props) {
 function makeCards(props) {
     let htmlString = '';
 
-    // console.log(props.TmbdMovies.results[0].poster_path);
+    console.log(props.TmbdMovies.results[0].poster_path);
 
 
     for (let i = 0; i < props.results.length; i++) {

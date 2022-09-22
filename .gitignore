@@ -33,3 +33,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+.DS_Store
+
+private_constants.js
+config.js
+keys.js
+.env
