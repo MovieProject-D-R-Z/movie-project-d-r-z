@@ -3,7 +3,7 @@ import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import SearchMovies, {SearchMoviesEvents} from "./views/SearchMovies.js";
 import EditMovie, {EditMoviesEvents} from "./views/EditMovie.js";
-import {MovieEvents} from "./views/Movies";
+import Movies, {MovieEvents} from "./views/Movies.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -14,7 +14,14 @@ export default function router(URI) {
     const routes = {
         '/': {
             returnView: Home,
-            state: {},
+            state: {
+                TmbdMovies: {
+                    url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }
+            },
             uri: '/',
             title: 'Home',
             viewEvent: HomeEvents
@@ -22,8 +29,8 @@ export default function router(URI) {
         '/movies': {
             returnView: Movies,
             state: {},
-            uri: '/',
-            title: 'Home',
+            uri: '/movies',
+            title: 'Movies',
             viewEvent: MovieEvents
         },
         '/searchMovies': {
@@ -35,14 +42,7 @@ export default function router(URI) {
         },
         '/editMovie': {
             returnView: EditMovie,
-            state: {
-                glitchMovies: {
-                    url: 'https://merciful-clear-regnosaurus.glitch.me/movies',
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }
-            },
+            state: {},
             uri: '/editMovie',
             title: 'Edit Movie',
             viewEvent: EditMoviesEvents
