@@ -19,7 +19,7 @@ function makeCards(props) {
     console.log(props.TmbdMovies.results[0].poster_path);
 
 
-    for (let i = 0; i < props.results.length; i++) {
+    for (let i = 0; i < props.TmbdMovies.results.length; i++) {
 
         htmlString  += `<div class="flip-card">
                                     <div class="flip-card-inner">

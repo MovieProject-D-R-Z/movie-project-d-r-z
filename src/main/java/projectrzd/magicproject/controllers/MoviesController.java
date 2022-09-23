@@ -13,12 +13,15 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
+
+
 @RequestMapping(value="/movies", produces = "application/json")
 public class MoviesController {
     private MoviesRepository moviesRepository;
 
 
     @GetMapping(value = "")
+
     public List<Movie> fetchMovies() {
         return moviesRepository.findAll();
     }
