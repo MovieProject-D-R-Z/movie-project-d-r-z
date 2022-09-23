@@ -17,6 +17,7 @@ function makeCards(props) {
     let htmlString = '';
 
     console.log(props.TmbdMovies.results[0].poster_path);
+    console.log((props.movies[0].title));
 
 
     for (let i = 0; i < props.TmbdMovies.results.length; i++) {
