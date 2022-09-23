@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import projectrzd.magicproject.data.Movie;
+
 import projectrzd.magicproject.repository.MoviesRepository;
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +14,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class MoviesController {
     private MoviesRepository moviesRepository;
+
 
     @GetMapping(value = "/movies", produces = "application/json")
     public List<Movie> fetchMovies() {
@@ -24,4 +26,15 @@ public class MoviesController {
     public Optional<Movie> fetchMovieByID(@PathVariable long id){
         return moviesRepository.findById(id);
     }
+
+    @GetMapping("/movies/title/{title}")
+    public Movie fetchMovieByTitle(@PathVariable String title){
+        return moviesRepository.findMovieByTitle(title);
+    }
+
+    @GetMapping("/movies/genre/{genre}")
+    Movie fetchMoviesByGenre(@PathVariable String genre){
+        return moviesRepository.findMovieByGenres(genre);
+    }
+
 }
