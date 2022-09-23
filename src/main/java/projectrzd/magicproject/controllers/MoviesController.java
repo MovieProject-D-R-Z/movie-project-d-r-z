@@ -6,14 +6,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import projectrzd.magicproject.data.Movie;
-
 import projectrzd.magicproject.repository.MoviesRepository;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
-
 
 @RequestMapping(value="/api/movies", produces = "application/json")
 public class MoviesController {

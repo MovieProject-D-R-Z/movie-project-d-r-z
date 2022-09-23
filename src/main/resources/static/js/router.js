@@ -21,6 +21,12 @@ export default function router(URI) {
                     headers: {
                         'Accept': 'application/json'
                     }
+                },
+                movies: {
+                    url: `http://localHost:8081/api/movies`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
                 }
             },
             uri: '/',
@@ -30,26 +36,57 @@ export default function router(URI) {
         '/movies': {
             returnView: MoviesIndex,
             state: {
-                movies: {
-                    url: `http://localHost:8081/api/movies`,
-                    headers: {
-                        'Accept': 'application/json'
+                state: {
+                    TmbdMovies: {
+                        url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    },
+                    movies: {
+                        url: `http://localHost:8081/api/movies`,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
                     }
-            }},
+                },
             uri: '/movies',
             title: 'Movies',
             viewEvent: MovieEvents
         },
         '/searchMovies': {
             returnView: SearchMovies,
-            state: {},
+            state: {
+                state: {
+                    TmbdMovies: {
+                        url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    },
+                    movies: {
+                        url: `http://localHost:8081/api/movies`,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }
+                },
+            }
+        },
             uri: '/searchMovies',
             title: 'Search Movies',
             viewEvent: SearchMoviesEvents
         },
         '/editMovie': {
             returnView: EditMovie,
-            state: {},
+            state: {
+                movies: {
+                    url: `http://localHost:8081/api/movies`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }
+            },
             uri: '/editMovie',
             title: 'Edit Movie',
             viewEvent: EditMoviesEvents
