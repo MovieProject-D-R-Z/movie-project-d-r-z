@@ -3,6 +3,7 @@ import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import SearchMovies, {SearchMoviesEvents} from "./views/SearchMovies.js";
 import EditMovie, {EditMoviesEvents} from "./views/EditMovie.js";
+import {MovieEvents} from "./views/Movies";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -13,17 +14,17 @@ export default function router(URI) {
     const routes = {
         '/': {
             returnView: Home,
-            state: {
-                TmbdMovies: {
-                    url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }
-            },
+            state: {},
             uri: '/',
             title: 'Home',
             viewEvent: HomeEvents
+        },
+        '/movies': {
+            returnView: Movies,
+            state: {},
+            uri: '/',
+            title: 'Home',
+            viewEvent: MovieEvents
         },
         '/searchMovies': {
             returnView: SearchMovies,
