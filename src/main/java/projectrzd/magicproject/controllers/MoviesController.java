@@ -15,13 +15,12 @@ import java.util.Optional;
 @AllArgsConstructor
 
 
-@RequestMapping(value="/movies", produces = "application/json")
+@RequestMapping(value="/api/movies", produces = "application/json")
 public class MoviesController {
     private MoviesRepository moviesRepository;
 
 
     @GetMapping(value = "")
-
     public List<Movie> fetchMovies() {
         return moviesRepository.findAll();
     }

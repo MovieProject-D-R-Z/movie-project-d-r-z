@@ -1,12 +1,10 @@
-export default function Movies(props) {
+export default function MoviesIndex(props) {
 
-    console.log(props.length);
-
-    return ` 
-    <h1>Movies</h1>
+    return `     
+        <h1 style="color: white">Movies</h1>
     `;
 }
 
 export function MovieEvents(props) {
-    console.log(props.length);
+    console.log(props);
 }
