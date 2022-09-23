@@ -28,7 +28,9 @@ export default function router(URI) {
         },
         '/movies': {
             returnView: Movies,
-            state: {},
+            state: {
+                movies: '/movies'
+            },
             uri: '/movies',
             title: 'Movies',
             viewEvent: MovieEvents
