@@ -4,6 +4,7 @@ import Loading from "./views/Loading.js";
 import SearchMovies, {SearchMoviesEvents} from "./views/SearchMovies.js";
 import EditMovie, {EditMoviesEvents} from "./views/EditMovie.js";
 import Movies, {MovieEvents} from "./views/Movies.js";
+import MoviesIndex from "./views/Movies.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -27,10 +28,14 @@ export default function router(URI) {
             viewEvent: HomeEvents
         },
         '/movies': {
-            returnView: Movies,
+            returnView: MoviesIndex,
             state: {
-                movies: '/movies'
-            },
+                movies: {
+                    url: `http://localHost:8081/api/movies`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+            }},
             uri: '/movies',
             title: 'Movies',
             viewEvent: MovieEvents
