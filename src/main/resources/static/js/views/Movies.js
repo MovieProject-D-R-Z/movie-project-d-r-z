@@ -11,3 +11,5 @@ export default function MoviesIndex(props) {
 export function MovieEvents(props) {
     console.log(props)
 }
+
+console.log("test");
