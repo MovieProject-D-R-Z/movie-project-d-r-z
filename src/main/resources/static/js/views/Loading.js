@@ -10,7 +10,7 @@ export default function Loading(props) {
                  height: 100%;
                  z-index: 1000;
                  
-                 background-color: #222;
+                 background-color: black;
             }
             
             #loader {

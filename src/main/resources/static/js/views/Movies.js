@@ -56,3 +56,6 @@ function makeCards(props) {
                                  `
     }
 }
+
+export function MovieEvents(props) {
+}

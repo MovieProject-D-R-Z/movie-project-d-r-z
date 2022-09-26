@@ -28,7 +28,7 @@ public class MoviesController {
         return moviesRepository.findById(id);
     }
 
-    @GetMapping("/title/{title}")
+    @GetMapping("/title/")
     public Movie fetchMovieByTitle(@PathVariable String title){
         return moviesRepository.findMovieByTitle(title);
     }
