@@ -5,14 +5,13 @@ export default function Home(props) {
     movies=props.movies
 
     return `
-        <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
          <body>
-            <section>
-                <div id="moviesHere" class ="scrolling-wrapper"></div>
-            </section>
-            <section>
-                <div id="moviesHere2" class=""></div>
-            </section>
+                 <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
+
+            <main>
+                <div><div id="moviesHere" class = "scrolling-wrapper"></div></div>
+                <div><div id="moviesHere2"></div></div>
+            </main>
         </body>
     `;
 }
@@ -20,8 +19,7 @@ export default function Home(props) {
 function makeCards(props) {
     // let htmlString = '';
     let placeMoviesHere = document.querySelector("#moviesHere");
-    let placeMoviesHere2 = document.querySelector("#moviesHere2");
-
+    let placeMoviesHere2 = document.querySelector("#moviesHere");
 
     // console.log((props.movies[3].poster_img_url));
 
@@ -44,10 +42,11 @@ function makeCards(props) {
                                         </div>
                                        </div>
                                     </div>         
-                                 </div>
-                                 <hr>`
+             </div>
+                                 `
         placeMoviesHere2.innerHTML +=
-            `<div class="flip-card">
+            `
+                <div class="flip-card">
                                     <div class="flip-card-inner">
                                        <div class="flip-card-front">
                                          <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
@@ -63,9 +62,8 @@ function makeCards(props) {
                                         </div>
                                        </div>
                                     </div>         
-                                 </div>
-                                 <hr>`
-
+             </div>
+            `
     }
 
     // return htmlString;
