@@ -6,7 +6,11 @@ export default function SearchMovies(props) {
     return `
     <body>
     <header>
-        
+        <style>
+            #moviesContainer {
+                justify-content: center;
+            }
+        </style>
     </header>
     <main>
         <div id="formContainer">
