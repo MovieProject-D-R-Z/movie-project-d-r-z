@@ -1,35 +1,42 @@
 const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 
-
+let movies;
 export default function Home(props) {
+    movies=props.movies
 
     return `
-        <body>
-            <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
-            <div id="homeContainer">
-                ${makeCards(props)}
-            </div>
+        <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
+         <body>
+            <section>
+                <div id="moviesHere" class ="scrolling-wrapper"></div>
+            </section>
+            <section>
+                <div id="moviesHere2" class=""></div>
+            </section>
         </body>
     `;
 }
 
 function makeCards(props) {
-    let htmlString = '';
+    // let htmlString = '';
+    let placeMoviesHere = document.querySelector("#moviesHere");
+    let placeMoviesHere2 = document.querySelector("#moviesHere2");
 
-    console.log((props.movies[3].poster_img_url));
+
+    // console.log((props.movies[3].poster_img_url));
 
 
-    for (let i = 0; i < props.movies.length; i++) {
-
-        htmlString  += `<div class="flip-card">
+    for (let i = 0; i < movies.length; i++) {
+        placeMoviesHere.innerHTML +=
+             `<div class="flip-card">
                                     <div class="flip-card-inner">
                                        <div class="flip-card-front">
-                                         <img id="movieTemplate" src=${props.movies[i].poster_img_url} alt="movie picture">
-                                         <p class="movieDetails">${props.movies[i].title}</p>
+                                         <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
+                                         <p class="movieDetails">${movies[i].title}</p>
                                          <p class="movieDetails"></p>
                                        </div>   
                                        <div class="flip-card-back">
-                                         <p class="backOverview">${props.movies[i].summary}</p>
+                                         <p class="backOverview">${movies[i].summary}</p>
                                          <div>
                                          <a href=""><i class="fa-solid fa-circle-play"></i></a>
                                          <a href=""><i class="fa-solid fa-circle-plus"></i></a>
@@ -39,10 +46,31 @@ function makeCards(props) {
                                     </div>         
                                  </div>
                                  <hr>`
+        placeMoviesHere2.innerHTML +=
+            `<div class="flip-card">
+                                    <div class="flip-card-inner">
+                                       <div class="flip-card-front">
+                                         <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
+                                         <p class="movieDetails">${movies[i].title}</p>
+                                         <p class="movieDetails"></p>
+                                       </div>   
+                                       <div class="flip-card-back">
+                                         <p class="backOverview">${movies[i].summary}</p>
+                                         <div>
+                                         <a href=""><i class="fa-solid fa-circle-play"></i></a>
+                                         <a href=""><i class="fa-solid fa-circle-plus"></i></a>
+                                         <a href=""><i class="fa-solid fa-heart"></i></a>
+                                        </div>
+                                       </div>
+                                    </div>         
+                                 </div>
+                                 <hr>`
+
     }
 
-    return htmlString;
+    // return htmlString;
 }
 
 export function HomeEvents() {
+    makeCards();
 }
