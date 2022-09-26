@@ -23,7 +23,7 @@ export default function router(URI) {
                     }
                 },
                 movies: {
-                    url: `http://localHost:8081/api/movies`,
+                    url: `http://localHost:8082/api/movies`,
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -44,7 +44,7 @@ export default function router(URI) {
                         }
                     },
                     movies: {
-                        url: `http://localHost:8081/api/movies`,
+                        url: `http://localHost:8082/api/movies`,
                         headers: {
                             'Accept': 'application/json'
                         }
@@ -65,7 +65,7 @@ export default function router(URI) {
                         }
                     },
                     movies: {
-                        url: `http://localHost:8081/api/movies`,
+                        url: `http://localHost:8082/api/movies`,
                         headers: {
                             'Accept': 'application/json'
                         }
@@ -81,7 +81,7 @@ export default function router(URI) {
             returnView: EditMovie,
             state: {
                 movies: {
-                    url: `http://localHost:8081/api/movies`,
+                    url: `http://localHost:8082/api/movies`,
                     headers: {
                         'Accept': 'application/json'
                     }
