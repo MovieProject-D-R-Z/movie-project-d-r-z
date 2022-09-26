@@ -16,21 +16,20 @@ export default function Home(props) {
 function makeCards(props) {
     let htmlString = '';
 
-    console.log(props.TmbdMovies.results[0].poster_path);
-    console.log((props.movies[0].title));
+    console.log((props.movies.length));
 
 
-    for (let i = 0; i < props.TmbdMovies.results.length; i++) {
+    for (let i = 0; i < props.movies.length; i++) {
 
         htmlString  += `<div class="flip-card">
                                     <div class="flip-card-inner">
                                        <div class="flip-card-front">
-                                         <img id="movieTemplate" src="https://image.tmdb.org/t/p/w300${props.TmbdMovies.results[i].poster_path}" alt="movie picture">
-                                         <p class="movieDetails">${props.TmbdMovies.results[i].original_title}</p>
+                                         <img id="movieTemplate" src="https://image.tmdb.org/t/p/w300${props.movies[i].title}" alt="movie picture">
+                                         <p class="movieDetails">${props.movies[i].title}</p>
                                          <p class="movieDetails"></p>
                                        </div>   
                                        <div class="flip-card-back">
-                                         <p class="backOverview">${props.TmbdMovies.results[i].overview}</p>
+                                         <p class="backOverview">${props.movies[i].title}</p>
                                          <div>
                                          <a href=""><i class="fa-solid fa-circle-play"></i></a>
                                          <a href=""><i class="fa-solid fa-circle-plus"></i></a>
