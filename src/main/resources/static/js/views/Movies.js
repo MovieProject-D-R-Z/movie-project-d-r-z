@@ -57,8 +57,5 @@ function makeCards(props) {
     }
 }
 
-    return``;
-}
-
 export function MovieEvents(props) {
 }
