@@ -23,7 +23,7 @@ export default function router(URI) {
                     }
                 },
                 movies: {
-                    url: `http://localHost:8081/api/movies`,
+                    url: `http://localHost:8082/api/movies`,
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -44,7 +44,7 @@ export default function router(URI) {
                         }
                     },
                     movies: {
-                        url: `http://localHost:8081/api/movies`,
+                        url: `http://localHost:8082/api/movies`,
                         headers: {
                             'Accept': 'application/json'
                         }
@@ -65,7 +65,7 @@ export default function router(URI) {
                         }
                     },
                     movies: {
-                        url: `http://localHost:8081/api/movies`,
+                        url: `http://localHost:8082/api/movies`,
                         headers: {
                             'Accept': 'application/json'
                         }
@@ -73,7 +73,7 @@ export default function router(URI) {
                 },
             }
         },
-            uri: '/searchMovies',
+            uri: 'searchMovies',
             title: 'Search Movies',
             viewEvent: SearchMoviesEvents
         },
@@ -81,7 +81,7 @@ export default function router(URI) {
             returnView: EditMovie,
             state: {
                 movies: {
-                    url: `http://localHost:8081/api/movies`,
+                    url: `http://localHost:8082/api/movies`,
                     headers: {
                         'Accept': 'application/json'
                     }
@@ -96,6 +96,13 @@ export default function router(URI) {
             state: {},
             uri: location.pathname,
             title: ' ERROR',
+        },
+        '/searchMovies': {
+            returnView: SearchMovies,
+            state: {},
+            uri: '/searchMovies',
+            title: 'Search Movies',
+            viewEvent: SearchMoviesEvents
         },
         '/loading': {
             returnView: Loading,
