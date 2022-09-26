@@ -89,6 +89,12 @@ a:hover {
     justify-content: center;
 }
 
+.scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
 .flip-card {
     background-color: transparent;
     width: 300px;
@@ -156,9 +162,9 @@ a:hover {
     justify-content: center;
 }
 
-#homeContainer {
+#moviesHere {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
