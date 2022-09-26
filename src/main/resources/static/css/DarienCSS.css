@@ -12,6 +12,7 @@ nav {
     padding: 20px;
     background: black;
     position: fixed;
+    z-index: 99999;
 }
 
 #logo {
@@ -182,12 +183,13 @@ a:hover {
     margin-top: 17vh;
     /*flex-wrap: wrap;*/
 }
-/*#moviesHere2 {*/
-/*    display: flex;*/
-/*    justify-content: space-evenly;*/
-/*    height: 49vh;*/
-/*    flex-wrap: wrap;*/
-/*}*/
+#moviesHere2 {
+    display: flex;
+    justify-content: space-evenly;
+    height: 49vh;
+    flex-wrap: wrap;
+    flex-basis: 33.333333%
+}
 
 hr {
     height: 50%;

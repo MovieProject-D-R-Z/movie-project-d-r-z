@@ -7,11 +7,10 @@ export default function Home(props) {
 
     return `
          <body>
-                 <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
-
+             <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
             <main>
-                <div><div id="moviesHere" class = "scrolling-wrapper"></div></div>
-                <div><div id="moviesHere2"></div></div>
+                <div id="moviesHere" class = "scrolling-wrapper"></div>
+                <div class = "container d-flex flex-wrap" id="moviesHere2"></div>
             </main>
         </body>
     `;
@@ -20,10 +19,9 @@ export default function Home(props) {
 function makeCards(props) {
     // let htmlString = '';
     let placeMoviesHere = document.querySelector("#moviesHere");
-    let placeMoviesHere2 = document.querySelector("#moviesHere");
+    let placeMoviesHere2 = document.querySelector("#moviesHere2");
 
     // console.log((props.movies[3].poster_img_url));
-
 
     for (let i = 0; i < movies.length; i++) {
         placeMoviesHere.innerHTML +=
