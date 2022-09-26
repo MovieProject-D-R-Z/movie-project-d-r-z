@@ -1,5 +1,3 @@
-const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
-
 
 export default function Home(props) {
 

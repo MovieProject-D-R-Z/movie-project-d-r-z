@@ -1,15 +1,9 @@
 let movies;
 
 export default function MoviesIndex(props) {
-    movies += props;
 
-    return`
-    <h1>Hello</h1>
-`;
+    return``;
 }
 
 export function MovieEvents(props) {
-    console.log(props)
 }
-
-console.log("test");
