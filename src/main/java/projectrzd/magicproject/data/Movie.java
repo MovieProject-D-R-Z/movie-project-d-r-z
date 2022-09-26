@@ -37,6 +37,9 @@ public class Movie {
     @Column
     private String comments;
 
+    @Column
+    private String poster_img_url;
+
     @ManyToMany(
             fetch = FetchType.LAZY,
             cascade = {CascadeType.DETACH, CascadeType.REFRESH},

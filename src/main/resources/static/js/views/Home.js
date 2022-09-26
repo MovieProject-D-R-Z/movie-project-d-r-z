@@ -16,7 +16,7 @@ export default function Home(props) {
 function makeCards(props) {
     let htmlString = '';
 
-    console.log((props.movies.length));
+    console.log((props.movies[3].poster_img_url));
 
 
     for (let i = 0; i < props.movies.length; i++) {
@@ -24,12 +24,12 @@ function makeCards(props) {
         htmlString  += `<div class="flip-card">
                                     <div class="flip-card-inner">
                                        <div class="flip-card-front">
-                                         <img id="movieTemplate" src="https://image.tmdb.org/t/p/w300${props.movies[i].title}" alt="movie picture">
+                                         <img id="movieTemplate" src=${props.movies[i].poster_img_url} alt="movie picture">
                                          <p class="movieDetails">${props.movies[i].title}</p>
                                          <p class="movieDetails"></p>
                                        </div>   
                                        <div class="flip-card-back">
-                                         <p class="backOverview">${props.movies[i].title}</p>
+                                         <p class="backOverview">${props.movies[i].summary}</p>
                                          <div>
                                          <a href=""><i class="fa-solid fa-circle-play"></i></a>
                                          <a href=""><i class="fa-solid fa-circle-plus"></i></a>
