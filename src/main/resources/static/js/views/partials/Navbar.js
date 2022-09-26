@@ -7,7 +7,7 @@ export default function Navbar(props) {
 
     html = html + `<div class="link"><a href="/editMovie" data-link>Edit Movie Info</a></div>`;
 
-    html = html + `<div class="link"><a href="/searchMovies" data-link>Find<i id="magnifying" class="fa-solid fa-magnifying-glass"></i></a></div>`;
+    html = html + `<div class="link"><a href="/title" data-link>Find<i id="magnifying" class="fa-solid fa-magnifying-glass"></i></a></div>`;
 
     html = html + `</nav><hr>`;
     return html;
