@@ -67,19 +67,16 @@ async function renderSearch(props) {
     container.innerHTML = `<div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
-                                        <img id="movieTemplate" src="https://image.tmdb.org/t/p/w300${props.TmbdMovies.results[i].poster_path}" alt="movie picture">
+                                        <img id="movieTemplate" src="${props.movies[0].poster_img_url}" alt="movie picture">
                                     </div>   
-                            
-                                </div>         
+                                        <div class="flip-card-back">
+                                            <p class="movieDetails">${props.movies[0].title}</p>
+                                            <p class="movieDetails">${props.movies[0].director}, ${props.movies[0].summary}</p>
+                                        </div>
+                                    </div>         
                            </div>`
 }
 
 export function SearchMoviesEvents() {
     search();
 }
-
-// <div className="flip-card-back">
-//     <p className="movieDetails">${movie_data.Title}</p>
-//     <p className="movieDetails">${movie_data.Rated}, ${movie_data.Genre}, ${movie_data.imdbRating}</p>
-//     <p>${movie_poster.results[0].overview}</p>
-// {/*</div>*/}

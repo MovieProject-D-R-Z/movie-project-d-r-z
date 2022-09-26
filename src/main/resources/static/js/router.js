@@ -33,50 +33,6 @@ export default function router(URI) {
             title: 'Home',
             viewEvent: HomeEvents
         },
-        '/movies': {
-            returnView: MoviesIndex,
-            state: {
-                state: {
-                    TmbdMovies: {
-                        url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    },
-                    movies: {
-                        url: `http://localHost:8082/api/movies`,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }
-                },
-            uri: '/movies',
-            title: 'Movies',
-            viewEvent: MovieEvents
-        },
-        '/searchMovies': {
-            returnView: SearchMovies,
-            state: {
-                state: {
-                    TmbdMovies: {
-                        url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    },
-                    movies: {
-                        url: `http://localHost:8082/api/movies`,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }
-                },
-            }
-        },
-            uri: 'searchMovies',
-            title: 'Search Movies',
-            viewEvent: SearchMoviesEvents
-        },
         '/editMovie': {
             returnView: EditMovie,
             state: {
@@ -97,10 +53,10 @@ export default function router(URI) {
             uri: location.pathname,
             title: ' ERROR',
         },
-        '/searchMovies': {
+        '/title': {
             returnView: SearchMovies,
             state: {},
-            uri: '/searchMovies',
+            uri: '/title',
             title: 'Search Movies',
             viewEvent: SearchMoviesEvents
         },
