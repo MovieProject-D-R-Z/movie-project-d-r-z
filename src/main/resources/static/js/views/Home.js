@@ -1,6 +1,7 @@
 const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 
 let movies;
+
 export default function Home(props) {
     movies=props.movies
 

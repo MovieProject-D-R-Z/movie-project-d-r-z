@@ -3,8 +3,6 @@ import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import SearchMovies, {SearchMoviesEvents} from "./views/SearchMovies.js";
 import EditMovie, {EditMoviesEvents} from "./views/EditMovie.js";
-import Movies, {MovieEvents} from "./views/Movies.js";
-import MoviesIndex from "./views/Movies.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -16,12 +14,6 @@ export default function router(URI) {
         '/': {
             returnView: Home,
             state: {
-                TmbdMovies: {
-                    url: `https://api.themoviedb.org/3/trending/all/day?api_key=${POSTER_API}`,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                },
                 movies: {
                     url: `http://localHost:8082/api/movies`,
                     headers: {
@@ -47,15 +39,16 @@ export default function router(URI) {
             title: 'Edit Movie',
             viewEvent: EditMoviesEvents
         },
-        '/error': {
-            returnView: Error404,
-            state: {},
-            uri: location.pathname,
-            title: ' ERROR',
-        },
         '/title': {
             returnView: SearchMovies,
-            state: {},
+            state: {
+                movies: {
+                    url: `http://localHost:8082/api/movies`,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                }
+            },
             uri: '/title',
             title: 'Search Movies',
             viewEvent: SearchMoviesEvents
@@ -65,6 +58,12 @@ export default function router(URI) {
             state: {},
             uri: location.pathname,
             title: 'Loading...',
+        },
+        '/error': {
+            returnView: Error404,
+            state: {},
+            uri: location.pathname,
+            title: ' ERROR',
         }
     };
 
