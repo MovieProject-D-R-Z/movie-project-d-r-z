@@ -5,7 +5,7 @@ export default function Navbar(props) {
         <nav>
             <div id="logoDiv" class="link"><a href="/" data-link id="logo">Pioneer Movies</a></div>`;
 
-    html = html + `<div class="link"><a href="/editMovie" data-link>Edit Movie Info</a></div>`;
+    html = html + `<div class="link"><a href="/admin" data-link>Admin</a></div>`;
 
     html = html + `<div class="link"><a href="/title" data-link>Find<i id="magnifying" class="fa-solid fa-magnifying-glass"></i></a></div>`;
 

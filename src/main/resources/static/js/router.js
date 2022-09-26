@@ -2,7 +2,7 @@ import Home, {HomeEvents} from "./views/Home.js";
 import Error404 from "./views/Error404.js";
 import Loading from "./views/Loading.js";
 import SearchMovies, {SearchMoviesEvents} from "./views/SearchMovies.js";
-import EditMovie, {EditMoviesEvents} from "./views/EditMovie.js";
+import AdminView, {AdminEvents} from "./views/Admin.js";
 
 /**
  * Returns the route object for a specific route based on the given URI
@@ -25,8 +25,8 @@ export default function router(URI) {
             title: 'Home',
             viewEvent: HomeEvents
         },
-        '/editMovie': {
-            returnView: EditMovie,
+        '/admin': {
+            returnView: AdminView,
             state: {
                 movies: {
                     url: `http://localHost:8082/api/movies`,
@@ -35,9 +35,9 @@ export default function router(URI) {
                     }
                 }
             },
-            uri: '/editMovie',
-            title: 'Edit Movie',
-            viewEvent: EditMoviesEvents
+            uri: '/admin',
+            title: 'Admin Page',
+            viewEvent: AdminEvents
         },
         '/title': {
             returnView: SearchMovies,
