@@ -1,62 +1,71 @@
-
+const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 
 let movies;
 
 export default function Home(props) {
-    movies = props.movies
+    movies=props.movies
 
     return `
-        <head>
-            <style>
-                section {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                }
-            </style>
-        </head>
-        <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
-         <body>
-            <section>
-                ${makeCards(props)}
-            </section>
-        </body>
+             <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
+            <main class = "container">
+                <div id="moviesHere" class="scrolling-wrapper"></div>
+            </main>
+            <div class="d-flex justify-content-center">
+                <div id="moviesHere2" class = "d-flex flex-wrap"></div>
+           </div>
     `;
 }
 
 function makeCards(props) {
-    let htmlString = '';
+    // let htmlString = '';
+    let placeMoviesHere = document.querySelector("#moviesHere");
+    let placeMoviesHere2 = document.querySelector("#moviesHere2");
 
-    for (let i = 0; i < props.movies.length; i++) {
+    // console.log((props.movies[3].poster_img_url));
 
-        htmlString  += `<div id="posterContainer">
-                                   <div class="flip-card">
+    for (let i = 0; i < movies.length; i++) {
+        placeMoviesHere.innerHTML +=
+             `<div class="flip-card">
                                     <div class="flip-card-inner">
                                        <div class="flip-card-front">
-                                         <img id="movieTemplate" src=${props.movies[i].poster_img_url} alt="movie picture">
-                                         <p class="movieDetails">${props.movies[i].title}</p>
-                                         <p class="movieDetails"></p>
+                                         <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
+                                         <p class="movieDetails">${movies[i].title}</p>
                                        </div>   
                                        <div class="flip-card-back">
-                                         <p class="movieDetails">${props.movies[i].title}</p>
-                                         <p class="backOverview">${props.movies[i].summary}</p>
+                                         <p class="backOverview">${movies[i].summary}</p>
                                          <div>
                                          <a href=""><i class="fa-solid fa-circle-play"></i></a>
                                          <a href=""><i class="fa-solid fa-circle-plus"></i></a>
-                                         <a href=""><i id="deleteIcon" data-id=${props.movies[i].id} class="fa-solid fa-circle-minus deleteMovie"></i></a>
                                          <a href=""><i class="fa-solid fa-heart"></i></a>
                                         </div>
                                        </div>
                                     </div>         
-                                 </div>
-                                </div>
-                                <hr>`
+             </div>
+                                 `
+        placeMoviesHere2.innerHTML +=
+            `
+                <div class="flip-card">
+                                    <div class="flip-card-inner">
+                                       <div class="flip-card-front">
+                                         <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
+                                         <p class="movieDetails">${movies[i].title}</p>
+                                       </div>   
+                                       <div class="flip-card-back">
+                                         <p class="backOverview">${movies[i].summary}</p>
+                                         <div>
+                                         <a href=""><i class="fa-solid fa-circle-play"></i></a>
+                                         <a href=""><i class="fa-solid fa-circle-plus"></i></a>
+                                         <a href=""><i class="fa-solid fa-heart"></i></a>
+                                        </div>
+                                       </div>
+                                    </div>         
+             </div>
+            `
     }
 
-    return htmlString;
+    // return htmlString;
 }
 
 export function HomeEvents() {
-    // makeCards();
+    makeCards();
 }
