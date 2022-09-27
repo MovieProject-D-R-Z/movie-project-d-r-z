@@ -14,10 +14,26 @@ export default function AdminView(props) {
                     flex-wrap: wrap;
                     justify-content: space-around;
                 }
+                
+                #AdminTitle {
+                    display: flex;
+                    justify-content: center;
+                }
+                
+                h1 {
+                    color: white;
+                    alignment: center;
+                }
+                
+                #posterContainer {
+                    margin-top: 10px;
+                }
             </style>
         </head>
         <body>
+            <div id="AdminTitle">
             <h1 style="white">Admin Page</h1>
+            </div>
             <div id="homeContainer">
                 ${makeCards(props)}
             </div>
