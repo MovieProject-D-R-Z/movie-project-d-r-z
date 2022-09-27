@@ -3,8 +3,9 @@ body {
     background-color: black;
     display: flex;
     flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-x: hidden;
 }
 
 nav {
@@ -83,6 +84,8 @@ a:hover {
 #movieTemplate {
     border-radius: 10px;
     border: 1px solid white;
+    height: 41vh;
+    width: 25.59vh;
 }
 
 .movieDetails {
@@ -99,6 +102,7 @@ a:hover {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: normal;
+    width: 100vw;
 }
 /*.scrolling-wrapper2 {*/
 /*    overflow-x: scroll;*/
@@ -108,18 +112,20 @@ a:hover {
 
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 450px;
+    min-width: 250px;
+    min-height: 400px;
     border: 1px solid fuchsia;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     border-radius: 10px;
-    /*margin-bottom: 10px;*/
-    /*overflow: scroll;*/
-    /*display: inline-block;*/
-    /*transform: translate(0, -5px);*/
     box-shadow: 0 0 20px 0 aqua;
     transition: 1s ease;
-    margin: 1em;
+    /*max-height: 450px;*/
+    /*max-width: 25vw;*/
+    margin-top: 1vh;
+}
+
+#scroll-cards{
+    margin: 11em;
 }
 
 /* This container is needed to position the front and back side */
@@ -130,6 +136,7 @@ a:hover {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -145,7 +152,6 @@ a:hover {
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
 }
-
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background-color: lightgoldenrodyellow;
@@ -158,6 +164,7 @@ a:hover {
     background-color: #3b3b3b;
     color: white;
     transform: rotateY(180deg);
+    overflow: hidden;
     border-radius: 10px;
 }
 
@@ -181,23 +188,25 @@ a:hover {
 
 #moviesHere {
     display: flex;
-    /*justify-content: space-evenly;*/
-    height: 49vh;
     margin-top: 17vh;
-    width: 80vw;
-    /*flex-wrap: wrap;*/
+    width: 100vw;
+    height: 38vh;
+    min-width:15% ;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin-bottom: 25vh;
 }
+
 #moviesHere2 {
     display: flex;
     justify-content: space-evenly;
     height: 49vh;
     flex-wrap: wrap;
     /*overflow: hidden;*/
-    width: 80vw;
+    width: 100vw;
     overflow-y: scroll;
-
-
-
+    margin-top: -22vh;
 }
 
 hr {
@@ -288,3 +297,14 @@ li {
     margin-top: 3vh;
     margin-left: 1vw;
 }
+
+/*.card-group.card-group-scroll {*/
+/*    overflow-x: auto;*/
+/*    flex-wrap: nowrap;*/
+/*    overflow-y: hidden;*/
+/*}*/
+
+/*.card-group.card-group-scroll > .card {*/
+/*    flex-basis: 100vw;*/
+/*}*/
+

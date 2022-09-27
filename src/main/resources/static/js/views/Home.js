@@ -6,15 +6,13 @@ export default function Home(props) {
     movies=props.movies
 
     return `
-         <body>
              <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
-            <main>
-                <div id="moviesHere" class = "scrolling-wrapper"></div>
+            <main class = "container">
+                <div id="moviesHere" class="scrolling-wrapper"></div>
             </main>
-            <div>
-                <div class = "d-flex flex-wrap" id="moviesHere2"></div>
+            <div class="d-flex justify-content-center">
+                <div id="moviesHere2" class = "d-flex flex-wrap"></div>
            </div>
-        </body>
     `;
 }
 
@@ -32,7 +30,6 @@ function makeCards(props) {
                                        <div class="flip-card-front">
                                          <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
                                          <p class="movieDetails">${movies[i].title}</p>
-                                         <p class="movieDetails"></p>
                                        </div>   
                                        <div class="flip-card-back">
                                          <p class="backOverview">${movies[i].summary}</p>
@@ -52,7 +49,6 @@ function makeCards(props) {
                                        <div class="flip-card-front">
                                          <img id="movieTemplate" src=${movies[i].poster_img_url} alt="movie picture">
                                          <p class="movieDetails">${movies[i].title}</p>
-                                         <p class="movieDetails"></p>
                                        </div>   
                                        <div class="flip-card-back">
                                          <p class="backOverview">${movies[i].summary}</p>
