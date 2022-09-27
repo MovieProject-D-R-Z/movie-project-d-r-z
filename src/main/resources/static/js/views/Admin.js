@@ -28,6 +28,10 @@ export default function AdminView(props) {
                 #posterContainer {
                     margin-top: 10px;
                 }
+                
+                a {
+                    margin-top: 10px;
+                }
             </style>
         </head>
         <body>
@@ -64,7 +68,7 @@ function makeCards(props) {
                                          <p class="backOverview">${props.movies[i].summary}</p>
                                          <div>
                                          <a href=""><i class="fa-solid fa-circle-play"></i></a>
-                                         <a href=""><i class="fa-solid fa-circle-plus"></i></a>
+                                         <a href=""><i id="addIcon"data-id=${props.movies[i].id} class="fa-solid fa-circle-plus addMovie"></i></a>
                                          <a href=""><i id="deleteIcon" data-id=${props.movies[i].id} class="fa-solid fa-circle-minus deleteMovie"></i></a>
                                          <a href=""><i class="fa-solid fa-heart"></i></a>
                                         </div>
@@ -76,6 +80,46 @@ function makeCards(props) {
     }
 
     return htmlString;
+}
+
+function setupNewMovieHandler() {
+    const addBtn = document.querySelector("#addMovie");
+    addBtn.addEventListener("click", function (e) {
+        // check the data-id for the save button
+        const movieId = parseInt(this.getAttribute("data-id"));
+
+        // get the title and content for the new/update post
+        const titleField = document.querySelector("#title");
+        const contentField = document.querySelector("#content");
+
+        const post = {
+            title: titleField.value,
+            content: contentField.value
+        }
+
+        // make request
+        const request = {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify(post)
+        }
+
+        let url = POST_API_BASE_URL;
+
+        // if we are updating post, change request and url
+
+        if (postId > 0) {
+            request.method = "PUT";
+            url += `/${postId}`;
+        }
+
+        fetch(url, request)
+            .then(function(response) {
+                console.log(response.status)
+                // check status code
+                CreateView("/posts");
+            })
+    })
 }
 
 function setupDeleteMovieHandler() {

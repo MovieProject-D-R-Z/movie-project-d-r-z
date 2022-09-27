@@ -14,6 +14,10 @@ export default function Home(props) {
                     flex-wrap: wrap;
                     justify-content: space-around;
                 }
+                
+                   a {
+                    margin-top: 10px;
+                }
             </style>
         </head>
         <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
@@ -58,5 +62,4 @@ function makeCards(props) {
 }
 
 export function HomeEvents() {
-    // makeCards();
 }
