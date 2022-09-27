@@ -10,8 +10,10 @@ export default function Home(props) {
              <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
             <main>
                 <div id="moviesHere" class = "scrolling-wrapper"></div>
-                <div class = "container d-flex flex-wrap" id="moviesHere2"></div>
             </main>
+            <div>
+                <div class = "d-flex flex-wrap" id="moviesHere2"></div>
+           </div>
         </body>
     `;
 }

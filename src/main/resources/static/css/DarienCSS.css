@@ -3,6 +3,8 @@ body {
     background-color: black;
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 100vh;
 }
 
 nav {
@@ -111,12 +113,13 @@ a:hover {
     border: 1px solid fuchsia;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     border-radius: 10px;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     /*overflow: scroll;*/
     /*display: inline-block;*/
     /*transform: translate(0, -5px);*/
     box-shadow: 0 0 20px 0 aqua;
     transition: 1s ease;
+    margin: 1em;
 }
 
 /* This container is needed to position the front and back side */
@@ -178,9 +181,10 @@ a:hover {
 
 #moviesHere {
     display: flex;
-    justify-content: space-evenly;
+    /*justify-content: space-evenly;*/
     height: 49vh;
     margin-top: 17vh;
+    width: 80vw;
     /*flex-wrap: wrap;*/
 }
 #moviesHere2 {
@@ -188,7 +192,12 @@ a:hover {
     justify-content: space-evenly;
     height: 49vh;
     flex-wrap: wrap;
-    flex-basis: 33.333333%
+    /*overflow: hidden;*/
+    width: 80vw;
+    overflow-y: scroll;
+
+
+
 }
 
 hr {
