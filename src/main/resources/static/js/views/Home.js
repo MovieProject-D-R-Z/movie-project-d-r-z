@@ -1,3 +1,4 @@
+
 const BASE_URI = `${BACKEND_HOST}/api/s3/download`;
 
 let movies;
@@ -6,7 +7,7 @@ export default function Home(props) {
     movies=props.movies
 
     return `
-             <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>
+<!--             <h1 id="homeViewH1">Greatest movies EVER! At the tip of your hands.</h1>-->
             <main class = "container">
                 <div id="moviesHere" class="scrolling-wrapper"></div>
             </main>
